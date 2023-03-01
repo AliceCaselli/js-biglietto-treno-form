@@ -1,38 +1,57 @@
-let kmPrice = "0.21";
+
+
+
+let kmPrice = 0.21;
 
 let userAgeEl = document.getElementById("userAge") ;
 
 let userKmEl = document.getElementById("userKm") ;
 
-let totalPrice = userKmEl.value * kmPrice;
-
-
-
-totalPrice = totalPrice.toFixed(2);
-
 let acceptBtn = document.getElementById("acceptBtn");
 
-let refuseBtn = document.getElementById("refuseBtn");
+let textEl = document.getElementById("text");
+
+let totalPrice;
 
 acceptBtn.addEventListener("click", function () {
+
+    let totalPrice = userKmEl.value * kmPrice;
+
+    let finalPrice;
+
+
+    if( !isNaN(userKmEl.value) && !isNaN(userAgeEl.value)) {
+
     
-    if(userAgeEl.value < 18){
+
+    
+        if(userAgeEl.value < 18){
+
         
-        totalPrice = totalPrice - totalPrice * 0.2;
+            finalPrice = totalPrice - totalPrice / 100 * 20;
         
         
-    } else if (userAge.value >= 65) {
+        } else if (userAgeEl.value >= 65) {
+        
+            finalPrice = totalPrice - totalPrice / 100 * 40;
+        
 
-        totalPrice = totalPrice - totalPrice * 0.4;
+        } else {
+        
+            finalPrice = totalPrice;
+        }
+        textEl.innerHTML =  "La tua età è di: " + userAgeEl.value + " anni. <br>"
+        textEl.innerHTML +=  "Il numero di chilometri è: " + userKmEl.value + " km. <br>"
+        textEl.innerHTML +=  "Il prezzo totale del biglietto è di: " + finalPrice + " euro."
+        
+        
+    } else{
 
-
-    } else {
-
-        totalPrice = totalPrice;
+        alert("Inserisci un numero in entrambi i campi");
     }
-    document.writeln(
-        `Il numero di chilometri è: ${userKmEl} km. <br>
-        La tua età è di: ${userAgeEl.value} anni. <br>
-        Il prezzo totale del biglietto è di: ${totalPrice} euro. `
-        )
-}) 
+
+    finalPrice = finalPrice.toFixed(2);
+})
+
+
+

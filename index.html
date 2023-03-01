@@ -11,30 +11,46 @@
 </head>
 <body>
 
-    <div>
+    <div class="container">
 
-        <label for="userAge">Quanti anni hai?</label>
+        <h1>Calcola il tuo biglietto</h1>
+
+        <div class="form">
+
             
-        <input id="userAge" type="text">
+            <div class="input">
+                
+                <label for="userAge">Quanti anni hai?</label>
+                
+                <input id="userAge" type="number">
+                
+            </div>
+            
+            <div class="input" >
+                
+                <label for="userKm">Quanti chilometri devi percorrere?</label>
+            
+            <input id="userKm" type="number">
+            
+            </div>
+        
+        </div>
+        <div>
+            
+            <button id="acceptBtn">Invia</button>
+            
+        </div>
+
+        <div class="result">
+            <div class="title">
+                BIGLIETTO
+            </div>
+            <div id="text"></div>
+
+        </div>
 
     </div>
-
-    <div>
-
-        <label for="userKm">Quanti chilometri devi percorrere?</label>
-            
-        <input id="userKm" type="text">
-            
-    </div>
-
-    <div>
-
-        <button id="acceptBtn">Accetta</button>
-
-        <button id="refuseBtn">Rifiuta</button>
-
-    </div>
-
+        
     <script type="text/javascript" src="js/script.js" ></script>
 </body>
 </html>
